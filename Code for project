@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">FitLife Gym</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="facilities.html">Our Facilities</a></li>
+                <li><a href="join.html">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="parallax">
+        <div class="floating-shapes"></div>
+        <div class="content">
+            <h1 class="gradient-text">FitLife Gym</h1>
+            <p>Transform your life with the best facilities and trainers.</p>
+            <section class="parallax">
+                <div class="content">
+                    <h1 class="gradient-text">FitLife Gym</h1>
+                    <p>Transform your life with the best facilities and trainers.</p>
+                    <div class="buttons">
+                        <a href="join.html" class="primary-btn">Join Now</a>
+                        <a href="about.html" class="secondary-btn">Learn More</a>
+                    </div>
+                </div>
+            </section>            
+        </div>
+    </div>
+
+    <section class="info">
+        <h2>Our Facilities</h2>
+        <p>Discover state-of-the-art equipment, expert trainers, and a supportive community.</p>
+        <div class="grid">
+            <div class="card">Cardio Zone</div>
+            <div class="card">Strength Training</div>
+            <div class="card">Personal Training</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitLife Gym. All rights reserved.</p>
+    </footer>
+
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join FitLife Gym</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FitLife Gym</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="facilities.html">Our Facilities</a></li>
+                <li><a href="join.html">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="join">
+        <h1>Join FitLife Gym</h1>
+        <p>Select your membership plan and complete your payment to start your fitness journey.</p>
+        <form id="join-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <label for="plan">Choose a Plan:</label>
+            <select id="plan" name="plan" required>
+                <option value="">Select Membership Plan</option>
+                <option value="360">Basic Plan - R360/month</option>
+                <option value="700">Standard Plan - R700/month</option>
+                <option value="1100">Premium Plan - R1100/month</option>
+            </select>
+            <button type="button" class="primary-btn" onclick="redirectToPayment()">Proceed to Payment</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitLife Gym. All rights reserved.</p>
+    </footer>
+
+    <script src="Scripts/payment.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FitLife Gym</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="facilities.html">Our Facilities</a></li>
+                <li><a href="join.html">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="payment">
+        <h1>Complete Your Payment</h1>
+        <div id="payment-details">
+            <!-- Payment details will be dynamically populated -->
+        </div>
+        <form action="https://your-real-payment-gateway.com/process" method="POST">
+            <input type="hidden" name="plan" id="hidden-plan">
+            <input type="hidden" name="name" id="hidden-name">
+            <input type="hidden" name="email" id="hidden-email">
+            <button type="submit" class="primary-btn">Pay Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitLife Gym. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get URL parameters and populate payment details
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan');
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+
+        // Display payment details
+        const paymentDetailsDiv = document.getElementById('payment-details');
+        paymentDetailsDiv.innerHTML = `
+            <p>Thank you, <strong>${name}</strong>!</p>
+            <p>You're signing up for a plan costing <strong>$${plan}/month</strong>.</p>
+            <p>We will send a receipt to <strong>${email}</strong>.</p>
+        `;
+
+        // Populate hidden fields for form submission
+        document.getElementById('hidden-plan').value = plan;
+        document.getElementById('hidden-name').value = name;
+        document.getElementById('hidden-email').value = email;
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FitLife Gym</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FitLife Gym</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="facilities.html">Our Facilities</a></li>
+                <li><a href="join.html">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about">
+        <h1>About FitLife Gym</h1>
+        <p>
+            At FitLife Gym, we believe in holistic fitness and well-being. Our state-of-the-art facilities, expert trainers, 
+            and supportive community help you achieve your fitness goals efficiently and effectively. Whether you're starting 
+            your journey or an experienced athlete, we cater to all levels of fitness.
+            Our goal is to have everyone who enters our doors feel good after each exercise 
+            and to enjoy working out with us.
+        </p>
+        <div class="about-images">
+            <img src="images/personal-trainers-6.jpg" alt="Our Trainers" ><p>Our Trainers</p>
+            <img src="images/state-art-gym-with-modern-fitness-equipment_68708-12723.avif" alt="Modern Equipment"><p>Our Equipment</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitLife Gym. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Facilities - FitLife Gym</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FitLife Gym</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="facilities.html">Our Facilities</a></li>
+                <li><a href="join.html">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <div class="facility-grid">
+            <div class="facility-item">
+                <img src="images/images.jpg" alt="Cardio Equipment">
+                <h3>Cardio Zone</h3>
+                <p>High-end treadmills, elliptical machines, and more.</p>
+            </div>
+            <div class="facility-item">
+                <img src="images/f5d8a5008c019d6c5b666055901257f7.jpg" alt="Weightlifting Zone">
+                <h3>Weightlifting Zone</h3>
+                <p>Comprehensive selection of free weights and machines.</p>
+            </div>
+            <div class="facility-item">
+                <img src="images/exercise-class-and-warrior-pose-for-workout-at-gym-spiritual-awareness-and-together-for-pilates-training-people-strong-lunge-and-community-fitness-2XT19Y9.jpg" alt="Yoga Studio">
+                <h3>Yoga Studio</h3>
+                <p>Relax and stretch in our serene yoga space.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitLife Gym. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f5af19;
+    letter-spacing: 2px;
+}
+header .nav-links {
+    display: flex;
+    gap: 20px;
+}
+header .nav-links li {
+    position: relative;
+}
+header .nav-links a {
+    font-size: 1.1rem;
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+}
+header .nav-links a:hover {
+    color: #f5af19;
+    transform: scale(1.1);
+}
+header .nav-links a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: #f5af19;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: right;
+}
+header .nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.parallax {
+    height: 100vh;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.parallax .content {
+    z-index: 2;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.parallax .content h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    animation: gradient-move 3s infinite alternate;
+}
+.parallax .content p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.parallax .buttons {
+    display: flex;
+    gap: 10px;
+}
+.parallax .buttons .primary-btn,
+.parallax .buttons .secondary-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.parallax .buttons .primary-btn {
+    background: #f12711;
+    color: white;
+    border-radius: 5px;
+}
+.parallax .buttons .secondary-btn {
+    background: transparent;
+    color: #f12711;
+    border: 2px solid #f12711;
+    border-radius: 5px;
+}
+.parallax .buttons .primary-btn:hover {
+    background: #f5af19;
+}
+.parallax .buttons .secondary-btn:hover {
+    color: white;
+    background: #f12711;
+    border-color: white;
+}
+
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+section h1, section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f5af19;
+}
+section p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+
+.facility-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.facility-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.facility-item:hover {
+    transform: scale(1.05);
+}
+.facility-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.facility-item h3 {
+    margin-bottom: 10px;
+    color: #f5af19;
+}
+
+
+.join form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.join form input,
+.join form select,
+.join form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.join form input,
+.join form select {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+.join form button {
+    background: #f12711;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.join form button:hover {
+    background: #f5af19;
+}
+
+
+.membership {
+    text-align: center;
+    padding: 50px 20px;
+    background: #121212;
+}
+.membership .plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.membership .plan {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.membership .plan:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+.membership .plan h2 {
+    margin-bottom: 10px;
+    color: #f5af19;
+}
+.membership .plan ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+.membership .plan ul li {
+    margin: 5px 0;
+}
+
+
+.payment {
+    text-align: center;
+    padding: 50px 20px;
+    background: #121212;
+    color: #fff;
+}
+.payment h1 {
+    margin-bottom: 20px;
+    color: #f5af19;
+}
+.payment p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.payment button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #f12711;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.payment button:hover {
+    background: #f5af19;
+}
+
+
+@keyframes gradient-move {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+const floatingShapes = document.querySelector('.floating-shapes');
+
+function createShape() {
+    const shape = document.createElement('div');
+    const size = Math.random() * 50 + 20;
+    shape.style.width = `${size}px`;
+    shape.style.height = `${size}px`;
+    shape.style.position = 'absolute';
+    shape.style.borderRadius = '50%';
+    shape.style.background = `rgba(255, 255, 255, 0.3)`;
+    shape.style.top = `${Math.random() * 100}%`;
+    shape.style.left = `${Math.random() * 100}%`;
+    shape.style.animation = `float ${Math.random() * 5 + 5}s infinite alternate ease-in-out`;
+    floatingShapes.appendChild(shape);
+
+    setTimeout(() => shape.remove(), 10000); 
+}
+
+setInterval(createShape, 1000);
+
+function redirectToPayment() {
+    const plan = document.getElementById('plan').value;
+
+
+    if (!plan) {
+        alert("Please select a membership plan before proceeding.");
+        return;
+    }
+
+    
+    const name = document.querySelector('input[placeholder="Full Name"]').value;
+    const email = document.querySelector('input[placeholder="Email Address"]').value;
+
+    if (!name || !email) {
+        alert("Please complete all required fields before proceeding.");
+        return;
+    }
+
+    
+    const paymentUrl = `payment.html?plan=${plan}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
+    window.location.href = paymentUrl;
+}
